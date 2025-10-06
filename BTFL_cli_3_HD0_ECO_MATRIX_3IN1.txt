@@ -1456,7 +1456,7 @@ set pitch_rate_limit = 1998
 set yaw_rate_limit = 1998
 
 # restore original rateprofile selection
-rateprofile 1
+rateprofile 2
 
 # save configuration
 save

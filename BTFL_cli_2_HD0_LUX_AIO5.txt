@@ -11,10 +11,10 @@ batch start
 
 board_name CRAZYBEEF4SX1280
 manufacturer_id HAMO
-mcu_id 00400061333150142030374c
+mcu_id 00170040333150152030374c
 signature 
 
-# name: 1
+# name: 2
 
 # resources
 resource BEEPER 1 C15
@@ -262,9 +262,9 @@ beacon RX_SET
 map AETR1234
 
 # led
-led 0 0,0::C:3
-led 1 1,0::C:3
-led 2 2,0::C:3
+led 0 0,0::C:1
+led 1 1,0::C:10
+led 2 2,0::C:2
 led 3 0,0::C:0
 led 4 0,0::C:0
 led 5 0,0::C:0
@@ -431,7 +431,7 @@ vtxtable band 2 BOSCAM_B B CUSTOM     0    0    0    0    0    0    0    0
 vtxtable band 3 BOSCAM_E E CUSTOM  5705    0    0    0    0    0    0    0
 vtxtable band 4 FATSHARK F CUSTOM  5740 5760    0 5800    0    0    0    0
 vtxtable band 5 RACEBAND R CUSTOM  5658 5695 5732 5769 5806 5843 5880 5917
-vtxtable band 6 LOWBAND  L CUSTOM  5362 5399 5436 5473 5510 5547 5584 5621
+vtxtable band 6 LOWBAND  L CUSTOM     0    0    0    0    0    0    0    0
 vtxtable powerlevels 3
 vtxtable powervalues 14 23 0
 vtxtable powerlabels 25 200 0
@@ -497,7 +497,7 @@ set acc_hardware = AUTO
 set acc_lpf_hz = 10
 set acc_trim_pitch = 0
 set acc_trim_roll = 0
-set acc_calibration = 19,-7,35,1
+set acc_calibration = 35,-27,70,1
 set mid_rc = 1500
 set min_check = 1050
 set max_check = 1900
@@ -778,7 +778,7 @@ set osd_sys_warnings_pos = 341
 set osd_sys_vtx_temp_pos = 341
 set osd_sys_fan_speed_pos = 341
 set osd_stat_bitmask = 2103206
-set osd_profile = 1
+set osd_profile = 3
 set osd_profile_1_name = -
 set osd_profile_2_name = -
 set osd_profile_3_name = -
@@ -871,7 +871,7 @@ set stats_min_armed_time_s = -1
 set stats_total_flights = 0
 set stats_total_time_s = 0
 set stats_total_dist_m = 0
-set craft_name = 1
+set craft_name = 2
 set pilot_name = markovka_quad
 set altitude_source = DEFAULT
 set altitude_prefer_baro = 100
@@ -1442,7 +1442,7 @@ set pitch_rate_limit = 1998
 set yaw_rate_limit = 1998
 
 # restore original rateprofile selection
-rateprofile 0
+rateprofile 2
 
 # save configuration
 save
