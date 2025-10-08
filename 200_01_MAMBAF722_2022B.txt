@@ -378,8 +378,8 @@ aux 2 2 1 1700 2100 0 0
 aux 3 13 3 1700 2100 0 0
 aux 4 35 2 1700 2100 0 0
 aux 5 39 3 1400 2100 0 0
-aux 6 0 0 900 900 0 0
-aux 7 0 0 900 900 0 0
+aux 6 45 6 1700 2100 1 0
+aux 7 45 0 900 900 1 39
 aux 8 0 0 900 900 0 0
 aux 9 0 0 900 900 0 0
 aux 10 0 0 900 900 0 0
@@ -479,7 +479,7 @@ rxfail 17 h
 # master
 set gyro_hardware_lpf = NORMAL
 set gyro_lpf1_type = PT1
-set gyro_lpf1_static_hz = 250
+set gyro_lpf1_static_hz = 0
 set gyro_lpf2_type = PT1
 set gyro_lpf2_static_hz = 500
 set gyro_notch1_hz = 0
@@ -493,24 +493,24 @@ set gyro_overflow_detect = ALL
 set yaw_spin_recovery = AUTO
 set yaw_spin_threshold = 1950
 set gyro_to_use = FIRST
-set dyn_notch_count = 3
-set dyn_notch_q = 300
-set dyn_notch_min_hz = 100
-set dyn_notch_max_hz = 600
-set gyro_lpf1_dyn_min_hz = 250
-set gyro_lpf1_dyn_max_hz = 500
+set dyn_notch_count = 2
+set dyn_notch_q = 450
+set dyn_notch_min_hz = 125
+set dyn_notch_max_hz = 650
+set gyro_lpf1_dyn_min_hz = 500
+set gyro_lpf1_dyn_max_hz = 1000
 set gyro_lpf1_dyn_expo = 5
 set gyro_filter_debug_axis = ROLL
 set acc_hardware = AUTO
 set acc_lpf_hz = 25
 set acc_trim_pitch = 0
 set acc_trim_roll = 0
-set acc_calibration = 54,-14,-4,1
+set acc_calibration = 45,-16,5,1
 set baro_bustype = I2C
 set baro_spi_device = 0
 set baro_i2c_device = 1
 set baro_i2c_address = 0
-set baro_hardware = AUTO
+set baro_hardware = NONE
 set mid_rc = 1500
 set min_check = 1050
 set max_check = 1900
@@ -522,8 +522,8 @@ set rssi_invert = OFF
 set rssi_src_frame_lpf_period = 30
 set rssi_smoothing = 125
 set rc_smoothing = ON
-set rc_smoothing_auto_factor = 30
-set rc_smoothing_auto_factor_throttle = 30
+set rc_smoothing_auto_factor = 25
+set rc_smoothing_auto_factor_throttle = 25
 set rc_smoothing_setpoint_cutoff = 0
 set rc_smoothing_feedforward_cutoff = 0
 set rc_smoothing_throttle_cutoff = 0
@@ -562,10 +562,10 @@ set blackbox_high_resolution = OFF
 set min_throttle = 1070
 set max_throttle = 2000
 set min_command = 1000
-set motor_kv = 1960
+set motor_kv = 1800
 set dshot_idle_value = 550
 set dshot_burst = ON
-set dshot_bidir = OFF
+set dshot_bidir = ON
 set dshot_edt = OFF
 set dshot_bitbang = AUTO
 set dshot_bitbang_timer = AUTO
@@ -591,8 +591,8 @@ set align_board_yaw = 0
 set bat_capacity = 0
 set vbat_max_cell_voltage = 430
 set vbat_full_cell_voltage = 410
-set vbat_min_cell_voltage = 330
-set vbat_warning_cell_voltage = 350
+set vbat_min_cell_voltage = 320
+set vbat_warning_cell_voltage = 340
 set vbat_hysteresis = 1
 set current_meter = ADC
 set battery_meter = ADC
@@ -645,11 +645,11 @@ set gyro_cal_on_first_arm = OFF
 set deadband = 0
 set yaw_deadband = 0
 set yaw_control_reversed = OFF
-set pid_process_denom = 1
+set pid_process_denom = 2
 set runaway_takeoff_prevention = ON
 set runaway_takeoff_deactivate_delay = 500
 set runaway_takeoff_deactivate_throttle_percent = 20
-set simplified_gyro_filter = ON
+set simplified_gyro_filter = OFF
 set simplified_gyro_filter_multiplier = 100
 set tlm_inverted = OFF
 set tlm_halfduplex = ON
@@ -790,7 +790,7 @@ set osd_sys_warnings_pos = 341
 set osd_sys_vtx_temp_pos = 341
 set osd_sys_fan_speed_pos = 341
 set osd_stat_bitmask = 2099110
-set osd_profile = 3
+set osd_profile = 2
 set osd_profile_1_name = -
 set osd_profile_2_name = -
 set osd_profile_3_name = -
@@ -881,7 +881,7 @@ set rpm_filter_harmonics = 3
 set rpm_filter_weights = 100,100,100
 set rpm_filter_q = 500
 set rpm_filter_min_hz = 100
-set rpm_filter_fade_range_hz = 50
+set rpm_filter_fade_range_hz = 100
 set rpm_filter_lpf_hz = 150
 set stats_min_armed_time_s = -1
 set stats_total_flights = 0
@@ -904,7 +904,7 @@ profile 0
 set profile_name = -
 set dterm_lpf1_dyn_min_hz = 75
 set dterm_lpf1_dyn_max_hz = 150
-set dterm_lpf1_dyn_expo = 5
+set dterm_lpf1_dyn_expo = 7
 set dterm_lpf1_type = PT1
 set dterm_lpf1_static_hz = 75
 set dterm_lpf2_type = PT1
@@ -930,22 +930,22 @@ set crash_recovery = OFF
 set iterm_rotation = OFF
 set iterm_relax = RP
 set iterm_relax_type = SETPOINT
-set iterm_relax_cutoff = 15
+set iterm_relax_cutoff = 45
 set iterm_windup = 85
-set iterm_limit = 400
+set iterm_limit = 500
 set pidsum_limit = 500
-set pidsum_limit_yaw = 400
+set pidsum_limit_yaw = 1000
 set yaw_lowpass_hz = 100
-set throttle_boost = 5
+set throttle_boost = 2
 set throttle_boost_cutoff = 15
-set p_pitch = 47
-set i_pitch = 84
-set d_pitch = 46
-set f_pitch = 125
-set p_roll = 45
-set i_roll = 80
-set d_roll = 40
-set f_roll = 120
+set p_pitch = 41
+set i_pitch = 89
+set d_pitch = 40
+set f_pitch = 137
+set p_roll = 38
+set i_roll = 81
+set d_roll = 35
+set f_roll = 125
 set p_yaw = 45
 set i_yaw = 80
 set d_yaw = 0
@@ -966,8 +966,8 @@ set abs_control_error_limit = 20
 set abs_control_cutoff = 11
 set use_integrated_yaw = OFF
 set integrated_yaw_relax = 200
-set d_min_roll = 30
-set d_min_pitch = 34
+set d_min_roll = 21
+set d_min_pitch = 23
 set d_min_yaw = 0
 set d_max_gain = 37
 set d_max_advance = 20
@@ -981,11 +981,11 @@ set launch_control_gain = 40
 set thrust_linear = 0
 set transient_throttle_limit = 0
 set feedforward_transition = 0
-set feedforward_averaging = OFF
-set feedforward_smooth_factor = 25
-set feedforward_jitter_factor = 7
-set feedforward_boost = 15
-set feedforward_max_rate_limit = 90
+set feedforward_averaging = 2_POINT
+set feedforward_smooth_factor = 65
+set feedforward_jitter_factor = 3
+set feedforward_boost = 18
+set feedforward_max_rate_limit = 100
 set dyn_idle_min_rpm = 0
 set dyn_idle_p_gain = 50
 set dyn_idle_i_gain = 50
@@ -993,25 +993,25 @@ set dyn_idle_d_gain = 50
 set dyn_idle_max_increase = 150
 set dyn_idle_start_increase = 50
 set level_race_mode = OFF
-set simplified_pids_mode = RPY
+set simplified_pids_mode = RP
 set simplified_master_multiplier = 100
-set simplified_i_gain = 100
-set simplified_d_gain = 100
-set simplified_pi_gain = 100
-set simplified_dmax_gain = 100
-set simplified_feedforward_gain = 100
+set simplified_i_gain = 120
+set simplified_d_gain = 70
+set simplified_pi_gain = 85
+set simplified_dmax_gain = 200
+set simplified_feedforward_gain = 105
 set simplified_pitch_d_gain = 100
-set simplified_pitch_pi_gain = 100
+set simplified_pitch_pi_gain = 105
 set simplified_dterm_filter = ON
 set simplified_dterm_filter_multiplier = 100
 set tpa_mode = D
-set tpa_rate = 65
-set tpa_breakpoint = 1350
+set tpa_rate = 70
+set tpa_breakpoint = 1250
 set tpa_low_rate = 20
 set tpa_low_breakpoint = 1050
 set tpa_low_always = OFF
 set ez_landing_threshold = 25
-set ez_landing_limit = 15
+set ez_landing_limit = 5
 set ez_landing_speed = 50
 
 profile 1
@@ -1368,20 +1368,20 @@ profile 0
 rateprofile 0
 
 # rateprofile 0
-set rateprofile_name = -
+set rateprofile_name = 1-07
 set thr_mid = 50
 set thr_expo = 0
-set rates_type = ACTUAL
+set rates_type = BETAFLIGHT
 set quickrates_rc_expo = OFF
-set roll_rc_rate = 7
-set pitch_rc_rate = 7
-set yaw_rc_rate = 7
+set roll_rc_rate = 100
+set pitch_rc_rate = 100
+set yaw_rc_rate = 100
 set roll_expo = 0
 set pitch_expo = 0
 set yaw_expo = 0
-set roll_srate = 67
-set pitch_srate = 67
-set yaw_srate = 67
+set roll_srate = 70
+set pitch_srate = 70
+set yaw_srate = 70
 set throttle_limit_type = OFF
 set throttle_limit_percent = 100
 set roll_rate_limit = 1998
@@ -1391,20 +1391,20 @@ set yaw_rate_limit = 1998
 rateprofile 1
 
 # rateprofile 1
-set rateprofile_name = -
+set rateprofile_name = 09-06
 set thr_mid = 50
 set thr_expo = 0
-set rates_type = ACTUAL
+set rates_type = BETAFLIGHT
 set quickrates_rc_expo = OFF
-set roll_rc_rate = 7
-set pitch_rc_rate = 7
-set yaw_rc_rate = 7
+set roll_rc_rate = 90
+set pitch_rc_rate = 90
+set yaw_rc_rate = 90
 set roll_expo = 0
 set pitch_expo = 0
 set yaw_expo = 0
-set roll_srate = 67
-set pitch_srate = 67
-set yaw_srate = 67
+set roll_srate = 60
+set pitch_srate = 60
+set yaw_srate = 60
 set throttle_limit_type = OFF
 set throttle_limit_percent = 100
 set roll_rate_limit = 1998
@@ -1414,20 +1414,20 @@ set yaw_rate_limit = 1998
 rateprofile 2
 
 # rateprofile 2
-set rateprofile_name = -
+set rateprofile_name = 08-05
 set thr_mid = 50
 set thr_expo = 0
-set rates_type = ACTUAL
+set rates_type = BETAFLIGHT
 set quickrates_rc_expo = OFF
-set roll_rc_rate = 7
-set pitch_rc_rate = 7
-set yaw_rc_rate = 7
+set roll_rc_rate = 80
+set pitch_rc_rate = 80
+set yaw_rc_rate = 80
 set roll_expo = 0
 set pitch_expo = 0
 set yaw_expo = 0
-set roll_srate = 67
-set pitch_srate = 67
-set yaw_srate = 67
+set roll_srate = 50
+set pitch_srate = 50
+set yaw_srate = 50
 set throttle_limit_type = OFF
 set throttle_limit_percent = 100
 set roll_rate_limit = 1998
@@ -1437,28 +1437,28 @@ set yaw_rate_limit = 1998
 rateprofile 3
 
 # rateprofile 3
-set rateprofile_name = -
+set rateprofile_name = 08-05-L
 set thr_mid = 50
 set thr_expo = 0
-set rates_type = ACTUAL
+set rates_type = BETAFLIGHT
 set quickrates_rc_expo = OFF
-set roll_rc_rate = 7
-set pitch_rc_rate = 7
-set yaw_rc_rate = 7
+set roll_rc_rate = 80
+set pitch_rc_rate = 80
+set yaw_rc_rate = 80
 set roll_expo = 0
 set pitch_expo = 0
 set yaw_expo = 0
-set roll_srate = 67
-set pitch_srate = 67
-set yaw_srate = 67
-set throttle_limit_type = OFF
-set throttle_limit_percent = 100
+set roll_srate = 50
+set pitch_srate = 50
+set yaw_srate = 50
+set throttle_limit_type = SCALE
+set throttle_limit_percent = 80
 set roll_rate_limit = 1998
 set pitch_rate_limit = 1998
 set yaw_rate_limit = 1998
 
 # restore original rateprofile selection
-rateprofile 2
+rateprofile 1
 
 # save configuration
 save
