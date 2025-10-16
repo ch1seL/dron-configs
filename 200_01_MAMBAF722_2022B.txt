@@ -378,8 +378,8 @@ aux 2 2 1 1700 2100 0 0
 aux 3 13 3 1700 2100 0 0
 aux 4 35 2 1700 2100 0 0
 aux 5 39 3 1400 2100 0 0
-aux 6 45 6 1700 2100 1 0
-aux 7 45 0 900 900 1 39
+aux 6 0 0 900 900 0 0
+aux 7 0 0 900 900 0 0
 aux 8 0 0 900 900 0 0
 aux 9 0 0 900 900 0 0
 aux 10 0 0 900 900 0 0
@@ -505,12 +505,12 @@ set acc_hardware = AUTO
 set acc_lpf_hz = 25
 set acc_trim_pitch = 0
 set acc_trim_roll = 0
-set acc_calibration = 45,-16,5,1
+set acc_calibration = 18,13,9,1
 set baro_bustype = I2C
 set baro_spi_device = 0
 set baro_i2c_device = 1
 set baro_i2c_address = 0
-set baro_hardware = NONE
+set baro_hardware = AUTO
 set mid_rc = 1500
 set min_check = 1050
 set max_check = 1900
@@ -626,7 +626,7 @@ set rpm_limit = OFF
 set rpm_limit_p = 25
 set rpm_limit_i = 10
 set rpm_limit_d = 8
-set rpm_limit_value = 18000
+set rpm_limit_value = 40000
 set 3d_deadband_low = 1406
 set 3d_deadband_high = 1514
 set 3d_neutral = 1460
@@ -709,15 +709,15 @@ set osd_logo_on_arming = OFF
 set osd_logo_on_arming_duration = 5
 set osd_use_quick_menu = ON
 set osd_show_spec_prearm = ON
-set osd_tim1 = 32
+set osd_tim1 = 0
 set osd_tim2 = 1
-set osd_vbat_pos = 45
+set osd_vbat_pos = 2444
 set osd_rssi_pos = 33
 set osd_link_quality_pos = 2144
 set osd_link_tx_power_pos = 341
 set osd_rssi_dbm_pos = 2112
 set osd_rsnr_pos = 341
-set osd_tim_1_pos = 14390
+set osd_tim_1_pos = 14392
 set osd_tim_2_pos = 2136
 set osd_remaining_time_estimate_pos = 341
 set osd_flymode_pos = 2554
@@ -725,7 +725,7 @@ set osd_anti_gravity_pos = 341
 set osd_g_force_pos = 65
 set osd_throttle_pos = 14778
 set osd_vtx_channel_pos = 6176
-set osd_crosshairs_pos = 238
+set osd_crosshairs_pos = 4334
 set osd_ah_sbar_pos = 313
 set osd_ah_pos = 185
 set osd_current_pos = 2496
@@ -742,18 +742,18 @@ set osd_home_dir_pos = 341
 set osd_home_dist_pos = 341
 set osd_flight_dist_pos = 341
 set osd_compass_bar_pos = 341
-set osd_altitude_pos = 341
+set osd_altitude_pos = 2432
 set osd_pid_roll_pos = 341
 set osd_pid_pitch_pos = 341
 set osd_pid_yaw_pos = 341
 set osd_debug_pos = 341
 set osd_power_pos = 341
 set osd_pidrate_profile_pos = 341
-set osd_warnings_pos = 14697
+set osd_warnings_pos = 14698
 set osd_avg_cell_voltage_pos = 14764
 set osd_pit_ang_pos = 341
 set osd_rol_ang_pos = 341
-set osd_battery_usage_pos = 341
+set osd_battery_usage_pos = 49537
 set osd_disarmed_pos = 14667
 set osd_nheading_pos = 341
 set osd_up_down_reference_pos = 312
@@ -787,7 +787,7 @@ set osd_sys_lq_pos = 341
 set osd_sys_goggle_dvr_pos = 341
 set osd_sys_vtx_dvr_pos = 341
 set osd_sys_warnings_pos = 341
-set osd_sys_vtx_temp_pos = 341
+set osd_sys_vtx_temp_pos = 409
 set osd_sys_fan_speed_pos = 341
 set osd_stat_bitmask = 2099110
 set osd_profile = 1
@@ -806,7 +806,7 @@ set osd_aux_channel = 1
 set osd_aux_scale = 200
 set osd_aux_symbol = 65
 set osd_canvas_width = 30
-set osd_canvas_height = 13
+set osd_canvas_height = 16
 set osd_craftname_msgs = OFF
 set task_statistics = ON
 set debug_mode = NONE
@@ -815,11 +815,11 @@ set cpu_overclock = OFF
 set pwr_on_arm_grace = 5
 set enable_stick_arming = OFF
 set vtx_band = 5
-set vtx_channel = 1
+set vtx_channel = 6
 set vtx_power = 1
 set vtx_low_power_disarm = OFF
 set vtx_softserial_alt = OFF
-set vtx_freq = 5658
+set vtx_freq = 5843
 set vtx_pit_mode_freq = 0
 set vtx_halfduplex = ON
 set vcd_video_system = PAL
@@ -1458,7 +1458,7 @@ set pitch_rate_limit = 1998
 set yaw_rate_limit = 1998
 
 # restore original rateprofile selection
-rateprofile 3
+rateprofile 2
 
 # save configuration
 save
